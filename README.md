@@ -32,7 +32,7 @@ available.
 Currently I do not release this extension as a gem. To use it add this to your
 Gemfile:
 
-    gem "spree_simple_volume_pricing", :git => "https://github.com/amw/spree-simple-volume-pricing.git", :tag => "v3.0.0"
+    gem "spree_simple_volume_pricing", :git => "https://github.com/amw/spree-simple-volume-pricing.git"#, :tag => "vX.X.X"
 
 
 # Options
