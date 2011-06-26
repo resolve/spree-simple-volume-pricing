@@ -27,4 +27,4 @@ Product.class_eval do
       VolumePrice.new vp.attributes.slice('starting_quantity', 'price')
     end
   end
-end unless Product.instance_methods.include? :all_variant_ids
+end unless Product.instance_method_names.include? "all_variant_ids"
