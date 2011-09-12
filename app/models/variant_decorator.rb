@@ -17,6 +17,17 @@ Variant.class_eval do
     end
   end
 
+  unless instance_methods.include? :price
+    def price
+      read_attribute :price
+    end
+  end
+
+  def price_with_master_dependency
+    volume_prices_source.price_without_master_dependency
+  end
+  alias_method_chain :price, :master_dependency
+
   def uses_volume_pricing?
     volume_prices_source.volume_prices.present?
   end
