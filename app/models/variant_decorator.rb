@@ -96,4 +96,4 @@ Variant.class_eval do
 
     total_cost
   end
-end unless Variant.instance_methods.include? :volume_prices_source
+end unless Variant.instance_method_names.include? "volume_prices_source"

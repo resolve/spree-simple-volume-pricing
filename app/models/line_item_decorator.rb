@@ -38,4 +38,4 @@ LineItem.class_eval do
   def check_update_volume_discount
     update_volume_discount if price_changed? || quantity_changed?
   end
-end unless LineItem.instance_methods.include? :amount_with_volume_discount
+end unless LineItem.instance_method_names.include? "amount_with_volume_discount"
