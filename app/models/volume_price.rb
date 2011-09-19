@@ -6,7 +6,7 @@ class VolumePrice < ActiveRecord::Base
   validates :starting_quantity,
     :presence => true,
     :uniqueness => {:scope => :variant_id},
-    :numericality => {:greater_than => 1, :only_integer => true,
+    :numericality => {:greater_than => 0, :only_integer => true, 
                       :allow_blank => true}
   validates :price,
     :presence => true,
