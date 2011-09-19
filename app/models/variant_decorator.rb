@@ -10,7 +10,7 @@ Variant.class_eval do
   after_create :copy_master_volume_prices
 
   def volume_prices_source
-    if !is_master && product.variants_use_master_discount
+    if !is_master && product && product.variants_use_master_discount
       product.master
     else
       self
