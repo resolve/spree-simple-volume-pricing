@@ -11,4 +11,8 @@ class VolumePrice < ActiveRecord::Base
   validates :price,
     :presence => true,
     :numericality => {:greater_than => 0.0, :allow_blank => true}
+    
+  def self.active
+    where(['start_at <= :now AND end_at >= :now', {:now => Time.now}])
+  end
 end

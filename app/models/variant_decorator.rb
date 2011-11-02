@@ -2,8 +2,7 @@ Variant.class_eval do
   has_many :volume_prices,
     :order => :starting_quantity,
     :dependent => :destroy,
-    :inverse_of => :variant,
-    :conditions => lambda { ['start_at <= :now AND end_at >= :now', {:now => Time.now}] }
+    :inverse_of => :variant
   accepts_nested_attributes_for :volume_prices,
     :reject_if => :blank_volume_price,
     :allow_destroy => true
