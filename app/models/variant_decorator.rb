@@ -29,7 +29,7 @@ Variant.class_eval do
   alias_method_chain :price, :master_dependency
 
   def uses_volume_pricing?
-    volume_prices_source.volume_prices.present?
+    volume_prices_source.volume_prices.active.present?
   end
 
   def uses_master_discount?
